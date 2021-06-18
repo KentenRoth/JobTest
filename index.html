@@ -70,7 +70,7 @@
 							<p>!tratS steL</p>
 						</div>
 
-						<form onsubmit="reverseString(); return false">
+						<form id="form" onsubmit="reverseString()">
 							<div>
 								<textarea
 									class="stringInput"
@@ -136,6 +136,12 @@
 			// Character counter.
 			let num = 0;
 			const textarea = document.querySelector('textarea');
+			const from = document.getElementById('form');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+			});
+
 			textarea.addEventListener('input', (e) => {
 				const maxLength = e.target.getAttribute('maxlength');
 				const currentLength = e.target.value.length;
@@ -162,7 +168,7 @@
 			});
 
 			// Function to reverse the string.
-			reverseString = () => {
+			reverseString = (e) => {
 				const string = document.getElementById('stringToReverse').value;
 				const reversedString = string.split('').reverse().join('');
 				document.getElementById('outputContent').innerHTML =
