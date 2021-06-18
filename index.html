@@ -27,7 +27,7 @@
 				);
 				color: #e1e1e1;
 				font-family: 'EB Garamond', serif;
-				font-size: 1.8rem;
+				font-size: 1.7rem;
 			}
 
 			.noWarning {
@@ -77,15 +77,27 @@
 						class="formBox noWarning"
 						id="formBox"
 					>
-						<p>Input your text below and lets reverse it!</p>
-						<p>!tratS steL</p>
+						<div style="margin-bottom: 10px; line-height: 1.6">
+							<p>Input your text below lets reverse it!</p>
+							<p>!tratS steL</p>
+						</div>
+
 						<form onsubmit="reverseString(); return false">
 							<div>
 								<textarea
 									class="stringInput"
 									id="stringToReverse"
+									maxlength="400"
 								></textarea>
-								<p class="counter">counter</p>
+								<p
+									style="
+										color: black;
+										font-weight: 500;
+										text-align: right;
+									"
+								>
+									counter
+								</p>
 							</div>
 							<div class="formSubmit">
 								<input class="submitButton" type="submit" />
@@ -96,6 +108,7 @@
 								background: rgba(0, 0, 0, 0.8);
 								border-radius: 10px;
 								color: white;
+								line-height: 1.3;
 								margin-top: 15px;
 								padding: 10px;
 							"
@@ -122,6 +135,12 @@
 		</main>
 
 		<script type="text/javascript">
+			//TODO
+			// Change background when close to char limit
+			// Setup char counter
+			// No more input allowed after char reached
+			// Connect output to
+
 			reverseString = () => {
 				const string = document.getElementById('stringToReverse').value;
 				console.log(string.split('').reverse().join(''));
