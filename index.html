@@ -127,22 +127,40 @@
 
 		<script type="text/javascript">
 			//TODO
-			// Change background when close to char limit
-			// Setup char counter
-			// Setup lower end limit warning
-			// Hide output box when nothing is there to be displayed.
 
+			// Button design
+
+			// Character counter.
+			let num = 0;
 			const textarea = document.querySelector('textarea');
-
 			textarea.addEventListener('input', (e) => {
 				const maxLength = e.target.getAttribute('maxlength');
 				const currentLength = e.target.value.length;
+
+				if (currentLength == maxLength) {
+					num = 1;
+					console.log(num);
+				}
+
+				if (num === 1 && currentLength != maxLength) {
+					const formBox = document.getElementById('formBox');
+					formBox.className = 'formBox noWarning';
+					num = 0;
+				}
+
+				if (num === 1 && currentLength == maxLength) {
+					const formBox = document.getElementById('formBox');
+					formBox.className = 'formBox stop';
+				}
 
 				document.getElementById(
 					'counter'
 				).innerHTML = `${currentLength} / 400`;
 			});
 
+			// Function to change background depending on char count
+
+			// Function to reverse the string.
 			reverseString = () => {
 				const string = document.getElementById('stringToReverse').value;
 				const reversedString = string.split('').reverse().join('');
