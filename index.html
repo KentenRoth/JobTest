@@ -92,11 +92,13 @@
 								<p
 									style="
 										color: black;
+										font-size: 14px;
 										font-weight: 500;
 										text-align: right;
 									"
+									id="counter"
 								>
-									counter
+									0 / 400
 								</p>
 							</div>
 							<div class="formSubmit">
@@ -115,18 +117,7 @@
 						>
 							<p>Output:</p>
 							<div>
-								<p>
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Repellendus, quidem!
-									Architecto iusto doloribus fuga quod sint,
-									non alias ipsam nulla, dolor voluptate quo?
-									Illo ipsum aliquam alias voluptas eligendi
-									voluptates! Lorem, ipsum dolor sit amet
-									consectetur adipisicing elit. Adipisci quod
-									excepturi, sed totam voluptas facilis qui
-									natus obcaecati minus, ipsam ab ea modi in
-									veniam aliquid nam illo illum reprehenderit.
-								</p>
+								<p id="outputContent"></p>
 							</div>
 						</div>
 					</div>
@@ -138,12 +129,25 @@
 			//TODO
 			// Change background when close to char limit
 			// Setup char counter
-			// No more input allowed after char reached
-			// Connect output to
+			// Setup lower end limit warning
+			// Hide output box when nothing is there to be displayed.
+
+			const textarea = document.querySelector('textarea');
+
+			textarea.addEventListener('input', (e) => {
+				const maxLength = e.target.getAttribute('maxlength');
+				const currentLength = e.target.value.length;
+
+				document.getElementById(
+					'counter'
+				).innerHTML = `${currentLength} / 400`;
+			});
 
 			reverseString = () => {
 				const string = document.getElementById('stringToReverse').value;
-				console.log(string.split('').reverse().join(''));
+				const reversedString = string.split('').reverse().join('');
+				document.getElementById('outputContent').innerHTML =
+					reversedString;
 			};
 		</script>
 	</body>
