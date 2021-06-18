@@ -30,17 +30,17 @@
 				font-size: 1.7rem;
 			}
 
+			.button:hover {
+				transform: scale(1.1);
+				box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+			}
+
 			.noWarning {
 				background: #606060;
 			}
 
 			.stop {
 				background: #b50505;
-			}
-
-			.stringInput {
-				width: 100%;
-				height: 100px;
 			}
 		</style>
 	</head>
@@ -94,8 +94,19 @@
 									0 / 400
 								</p>
 							</div>
-							<div class="formSubmit">
-								<input class="submitButton" type="submit" />
+							<div>
+								<input
+									style="
+										border: none;
+										border-radius: 5px;
+										cursor: pointer;
+										padding: 5px 20px;
+										transition: ease-in-out 200ms;
+									"
+									class="button"
+									value="Reverse It!"
+									type="submit"
+								/>
 							</div>
 						</form>
 						<div
@@ -120,8 +131,6 @@
 
 		<script type="text/javascript">
 			//TODO
-
-			// Button design
 
 			// Character counter.
 			let num = 0;
