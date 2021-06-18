@@ -6,22 +6,125 @@
 		<title>Reverse String Site</title>
 		<meta name="description" content="reverse string test" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				font-size: 62.5%;
+				min-height: 100%;
+			}
+
+			body {
+				background: linear-gradient(
+					150deg,
+					rgba(2, 0, 36, 1) 0%,
+					rgba(9, 121, 110, 1) 70%,
+					rgba(0, 212, 255, 1) 100%
+				);
+				color: #e1e1e1;
+				font-family: 'EB Garamond', serif;
+				font-size: 1.8rem;
+			}
+
+			.noWarning {
+				background: #606060;
+			}
+
+			.success {
+				background: #03c429;
+			}
+
+			.firstWarning {
+				background: #c7c200;
+			}
+
+			.secondWarning {
+				background: #bd602b;
+			}
+
+			.stop {
+				background: #b50505;
+			}
+
+			.stringInput {
+				width: 100%;
+				height: 100px;
+			}
+		</style>
 	</head>
 	<body>
-		<div>
-			<div>
-				<form onsubmit="reverseString(); return false">
-					<input type="text" id="stringToReverse" />
-					<input type="submit" />
-				</form>
+		<main
+			style="
+				display: flex;
+				justify-content: center;
+				min-height: 90vh;
+				color: #000;
+			"
+		>
+			<div style="max-width: 500px; margin: auto; text-align: center">
+				<div style="margin: 0px; text-align: center">
+					<div
+						style="
+							border-radius: 10px;
+							text-align: center;
+							padding: 22.5px 45px;
+							box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
+						"
+						class="formBox noWarning"
+						id="formBox"
+					>
+						<p>Input your text below and lets reverse it!</p>
+						<p>!tratS steL</p>
+						<form onsubmit="reverseString(); return false">
+							<div>
+								<textarea
+									class="stringInput"
+									id="stringToReverse"
+								></textarea>
+								<p class="counter">counter</p>
+							</div>
+							<div class="formSubmit">
+								<input class="submitButton" type="submit" />
+							</div>
+						</form>
+						<div
+							style="
+								background: rgba(0, 0, 0, 0.8);
+								border-radius: 10px;
+								color: white;
+								margin-top: 15px;
+								padding: 10px;
+							"
+						>
+							<p>Output:</p>
+							<div>
+								<p>
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Repellendus, quidem!
+									Architecto iusto doloribus fuga quod sint,
+									non alias ipsam nulla, dolor voluptate quo?
+									Illo ipsum aliquam alias voluptas eligendi
+									voluptates! Lorem, ipsum dolor sit amet
+									consectetur adipisicing elit. Adipisci quod
+									excepturi, sed totam voluptas facilis qui
+									natus obcaecati minus, ipsam ab ea modi in
+									veniam aliquid nam illo illum reprehenderit.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
+		</main>
 
 		<script type="text/javascript">
 			reverseString = () => {
 				const string = document.getElementById('stringToReverse').value;
-				console.log(string);
+				console.log(string.split('').reverse().join(''));
 			};
 		</script>
 	</body>
