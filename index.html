@@ -34,18 +34,6 @@
 				background: #606060;
 			}
 
-			.success {
-				background: #03c429;
-			}
-
-			.firstWarning {
-				background: #c7c200;
-			}
-
-			.secondWarning {
-				background: #bd602b;
-			}
-
 			.stop {
 				background: #b50505;
 			}
@@ -88,6 +76,11 @@
 									class="stringInput"
 									id="stringToReverse"
 									maxlength="400"
+									style="
+										height: 150px;
+										width: 100%;
+										padding: 5px;
+									"
 								></textarea>
 								<p
 									style="
@@ -157,8 +150,6 @@
 					'counter'
 				).innerHTML = `${currentLength} / 400`;
 			});
-
-			// Function to change background depending on char count
 
 			// Function to reverse the string.
 			reverseString = () => {
